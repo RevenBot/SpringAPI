@@ -28,14 +28,14 @@ public class BookController {
 
     // Get a Single Note
     @GetMapping("/books/{id}")
-    public Book getNoteById(@PathVariable(value = "id") Long bookId) throws BookNotFoundException {
+    public Book getNoteById(@PathVariable(value = "id") String bookId) throws BookNotFoundException {
         return bookRepository.findById(bookId)
                 .orElseThrow(() -> new BookNotFoundException(bookId));
     }
 
     // Update a Note
     @PutMapping("/books/{id}")
-    public Book updateNote(@PathVariable(value = "id") Long bookId,
+    public Book updateNote(@PathVariable(value = "id") String bookId,
                             @RequestBody Book bookDetails) throws BookNotFoundException {
 
         Book book = bookRepository.findById(bookId)
@@ -52,7 +52,7 @@ public class BookController {
 
     // Delete a Note
     @DeleteMapping("/books/{id}")
-    public ResponseEntity<?> deleteBook(@PathVariable(value = "id") Long bookId) throws BookNotFoundException {
+    public ResponseEntity<?> deleteBook(@PathVariable(value = "id") String bookId) throws BookNotFoundException {
         Book book = bookRepository.findById(bookId)
                 .orElseThrow(() -> new BookNotFoundException(bookId));
 
