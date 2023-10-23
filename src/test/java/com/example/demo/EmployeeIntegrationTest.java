@@ -2,10 +2,8 @@ package com.example.demo;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.http.MediaType;
-
 import com.example.demo.model.Employee;
 import com.fasterxml.jackson.databind.ObjectMapper;
-
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.post;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.put;
@@ -41,6 +39,11 @@ public class EmployeeIntegrationTest extends DemoApplicationTests {
                 .andReturn().getResponse().getContentAsString();
 
         newEmployee = mapper.readValue(response, Employee.class);
+
+        shouldReturnEmployeeById(newEmployee.getId());
+
+        shouldUpdateEmployee(newEmployee.getId());
+
         shouldRemoveEmployee(newEmployee.getId());
     }
 
@@ -54,10 +57,9 @@ public class EmployeeIntegrationTest extends DemoApplicationTests {
                 .andExpect(jsonPath("$").isArray());
     }
 
-    @Test
-    void shouldReturnEmployeeById() throws Exception {
+    void shouldReturnEmployeeById(String id) throws Exception {
         String endpoint = "/api/employees/{id}";
-        String id = "a657c84b-0df5-4026-ab4a-7eebaf1c19a9";
+        // String id = "a657c84b-0df5-4026-ab4a-7eebaf1c19a9";
 
         this.mockMvc.perform(get(endpoint, id))
                 .andExpect(status().isOk())
@@ -68,10 +70,10 @@ public class EmployeeIntegrationTest extends DemoApplicationTests {
                 .andExpect(jsonPath("$.email").exists());
     }
 
-    @Test
-    void shouldUpdateEmployee() throws Exception {
+    // @Test
+    void shouldUpdateEmployee(String id) throws Exception {
         String endpoint = "/api/employees/{id}";
-        String id = "a657c84b-0df5-4026-ab4a-7eebaf1c19a9";
+        // String id = "a657c84b-0df5-4026-ab4a-7eebaf1c19a9";
 
         Employee newEmployee = new Employee() {
             {

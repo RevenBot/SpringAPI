@@ -17,10 +17,10 @@ public class Employee {
     @Id
     @GeneratedValue(strategy = GenerationType.UUID)
     private String id;
-    @JsonProperty("first-name")
+    @JsonProperty("firstName")
     @Column(name = "first_name", nullable = false)
     private String firstName;
-    @JsonProperty("last-name")
+    @JsonProperty("lastName")
     @Column(name = "last_name")
     private String lastName;
     @Column(name = "email")
