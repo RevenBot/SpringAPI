@@ -1,0 +1,263 @@
+{
+	"info": {
+		"_postman_id": "8726216b-de9d-4c8c-996b-a9ee01d161cc",
+		"name": "Demo-Spring-Sqlite",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "28718187"
+	},
+	"item": [
+		{
+			"name": "Books",
+			"item": [
+				{
+					"name": "Book",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"bookName\" : \"post\",\r\n    \"authorName\": \"gigante\",\r\n    \"isbn\":\"1234\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:6969/api/books/fd2bb0ae-8981-4146-a207-99b024258f0c",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "6969",
+							"path": [
+								"api",
+								"books",
+								"fd2bb0ae-8981-4146-a207-99b024258f0c"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Books",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:6969/api/books/fd2bb0ae-8981-4146-a207-99b024258f0c",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "6969",
+							"path": [
+								"api",
+								"books",
+								"fd2bb0ae-8981-4146-a207-99b024258f0c"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Book",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"bookName\" : \"post\",\r\n    \"authorName\": \"gigante\",\r\n    \"isbn\":\"1234\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:6969/api/books",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "6969",
+							"path": [
+								"api",
+								"books"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getById",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:6969/api/books/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "6969",
+							"path": [
+								"api",
+								"books",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:6969/api/books/deab06bf-74b1-4fe2-bf8d-e8270539fb28",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "6969",
+							"path": [
+								"api",
+								"books",
+								"deab06bf-74b1-4fe2-bf8d-e8270539fb28"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Employees",
+			"item": [
+				{
+					"name": "Employees",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"firstName\": \"Yuti\",\r\n    \"lastName\": \"Vlok\",\r\n    \"email\": \"vlok@gmail.com\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:6969/api/employees",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "6969",
+							"path": [
+								"api",
+								"employees"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Employess",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:6969/api/employees",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "6969",
+							"path": [
+								"api",
+								"employees"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getById",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:6969/api/employees/dcbfd3c7-c534-40f4-823c-2a0e66a6ebdf",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "6969",
+							"path": [
+								"api",
+								"employees",
+								"dcbfd3c7-c534-40f4-823c-2a0e66a6ebdf"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Put",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"firstName\": \"Mario\",\r\n    \"lastName\": \"Rossi\",\r\n    \"email\": \"m.rossi@gmail.com\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:6969/api/employees/dcbfd3c7-c534-40f4-823c-2a0e66a6ebdf",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "6969",
+							"path": [
+								"api",
+								"employees",
+								"dcbfd3c7-c534-40f4-823c-2a0e66a6ebdf"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:6969/api/employees/deab06bf-74b1-4fe2-bf8d-e8270539fb28",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "6969",
+							"path": [
+								"api",
+								"employees",
+								"deab06bf-74b1-4fe2-bf8d-e8270539fb28"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
