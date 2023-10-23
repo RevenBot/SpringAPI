@@ -1,7 +1,7 @@
 package com.example.demo.repositories;
 
-import com.example.demo.domain.User;
 import com.example.demo.exceptions.EtAuthException;
+import com.example.demo.model.User;
 
 public interface UserRepository {
     Integer create(String firstName,String lasName, String email, String password) throws EtAuthException;

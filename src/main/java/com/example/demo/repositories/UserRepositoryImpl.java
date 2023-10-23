@@ -1,7 +1,8 @@
 package com.example.demo.repositories;
 
-import com.example.demo.domain.User;
 import com.example.demo.exceptions.EtAuthException;
+import com.example.demo.model.User;
+
 import org.springframework.stereotype.Repository;
 
 @Repository

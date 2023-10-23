@@ -1,7 +1,7 @@
 package com.example.demo.resources;
 
-import com.example.demo.domain.Book;
 import com.example.demo.exceptions.BookNotFoundException;
+import com.example.demo.model.Book;
 import com.example.demo.repositories.BookRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
