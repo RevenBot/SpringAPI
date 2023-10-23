@@ -42,8 +42,8 @@ public class BookController {
         Book book = bookRepository.findById(bookId)
                 .orElseThrow(() -> new BookNotFoundException(bookId));
 
-        book.setBook_name(bookDetails.getBook_name());
-        book.setAuthor_name(bookDetails.getAuthor_name());
+        book.setBookName(bookDetails.getBookName());
+        book.setAuthorName(bookDetails.getAuthorName());
         book.setIsbn(bookDetails.getIsbn());
 
         Book updatedBook = bookRepository.save(book);
