@@ -34,8 +34,8 @@ public class BooksIntegrationTest extends DemoApplicationTests {
                 .andExpect(status().isOk())
                 .andExpect(content().contentType(MediaType.APPLICATION_JSON))
                 .andExpect(jsonPath("$.id").exists())
-                .andExpect(jsonPath("$.book-name").value(newBook.getBookName()))
-                .andExpect(jsonPath("$.author-name").value(newBook.getAuthorName()))
+                .andExpect(jsonPath("$.bookName").value(newBook.getBookName()))
+                .andExpect(jsonPath("$.authorName").value(newBook.getAuthorName()))
                 .andExpect(jsonPath("$.isbn").value(newBook.getIsbn()))
                 .andReturn().getResponse().getContentAsString();
 
@@ -66,8 +66,8 @@ public class BooksIntegrationTest extends DemoApplicationTests {
                 .andExpect(status().isOk())
                 .andExpect(content().contentType(MediaType.APPLICATION_JSON))
                 .andExpect(jsonPath("$.id").value(id))
-                .andExpect(jsonPath("$.book-name").exists())
-                .andExpect(jsonPath("$.author-name").exists())
+                .andExpect(jsonPath("$.bookName").exists())
+                .andExpect(jsonPath("$.authorName").exists())
                 .andExpect(jsonPath("$.isbn").exists());
     }
 
@@ -92,8 +92,8 @@ public class BooksIntegrationTest extends DemoApplicationTests {
                 .andExpect(status().isOk())
                 .andExpect(content().contentType(MediaType.APPLICATION_JSON))
                 .andExpect(jsonPath("$.id").value(id))
-                .andExpect(jsonPath("$.author-name").value("test"))
-                .andExpect(jsonPath("$.book-name").value("test"))
+                .andExpect(jsonPath("$.authorName").value("test"))
+                .andExpect(jsonPath("$.bookName").value("test"))
                 .andExpect(jsonPath("$.isbn").value("test"));
     }
 

@@ -33,8 +33,8 @@ public class EmployeeIntegrationTest extends DemoApplicationTests {
                 .andExpect(status().isCreated())
                 .andExpect(content().contentType(MediaType.APPLICATION_JSON))
                 .andExpect(jsonPath("$.id").exists())
-                .andExpect(jsonPath("$.first-name").value(newEmployee.getFirstName()))
-                .andExpect(jsonPath("$.last-name").value(newEmployee.getLastName()))
+                .andExpect(jsonPath("$.firstName").value(newEmployee.getFirstName()))
+                .andExpect(jsonPath("$.lastName").value(newEmployee.getLastName()))
                 .andExpect(jsonPath("$.email").value(newEmployee.getEmail()))
                 .andReturn().getResponse().getContentAsString();
 
@@ -65,8 +65,8 @@ public class EmployeeIntegrationTest extends DemoApplicationTests {
                 .andExpect(status().isOk())
                 .andExpect(content().contentType(MediaType.APPLICATION_JSON))
                 .andExpect(jsonPath("$.id").value(id))
-                .andExpect(jsonPath("$.first-name").exists())
-                .andExpect(jsonPath("$.last-name").exists())
+                .andExpect(jsonPath("$.firstName").exists())
+                .andExpect(jsonPath("$.lastName").exists())
                 .andExpect(jsonPath("$.email").exists());
     }
 
@@ -92,8 +92,8 @@ public class EmployeeIntegrationTest extends DemoApplicationTests {
                 .andExpect(status().isOk())
                 .andExpect(content().contentType(MediaType.APPLICATION_JSON))
                 .andExpect(jsonPath("$.id").value(id))
-                .andExpect(jsonPath("$.first-name").value("test"))
-                .andExpect(jsonPath("$.last-name").value("test"))
+                .andExpect(jsonPath("$.firstName").value("test"))
+                .andExpect(jsonPath("$.lastName").value("test"))
                 .andExpect(jsonPath("$.email").value("test.test@gmail.com"));
     }
 
