@@ -9,32 +9,33 @@ import org.springframework.http.ResponseEntity;
 import java.util.List;
 
 @RestController
+@RequestMapping("/api/books")
 public class BookController {
 
     @Autowired
     BookRepository bookRepository;
 
     // Get All Notes
-    @GetMapping("/books")
+    @GetMapping
     public List<Book> getAllNotes() {
         return bookRepository.findAll();
     }
 
     // Create a new Note
-    @PostMapping("/books")
+    @PostMapping
     public Book createNote(@RequestBody Book book) {
         return bookRepository.save(book);
     }
 
     // Get a Single Note
-    @GetMapping("/books/{id}")
+    @GetMapping("{id}")
     public Book getNoteById(@PathVariable(value = "id") String bookId) throws BookNotFoundException {
         return bookRepository.findById(bookId)
                 .orElseThrow(() -> new BookNotFoundException(bookId));
     }
 
     // Update a Note
-    @PutMapping("/books/{id}")
+    @PutMapping("{id}")
     public Book updateNote(@PathVariable(value = "id") String bookId,
                             @RequestBody Book bookDetails) throws BookNotFoundException {
 
@@ -51,7 +52,7 @@ public class BookController {
     }
 
     // Delete a Note
-    @DeleteMapping("/books/{id}")
+    @DeleteMapping("{id}")
     public ResponseEntity<?> deleteBook(@PathVariable(value = "id") String bookId) throws BookNotFoundException {
         Book book = bookRepository.findById(bookId)
                 .orElseThrow(() -> new BookNotFoundException(bookId));
